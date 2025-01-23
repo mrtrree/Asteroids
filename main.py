@@ -38,6 +38,12 @@ def main():
                 print("Game over!")
                 exit()
 
+        for a in asteroid:
+            for b in shot:
+                if a.collision(b) == True:
+                    a.kill()
+                    b.kill()
+
         for d in drawable:
             d.draw(screen)
         pygame.display.flip()
